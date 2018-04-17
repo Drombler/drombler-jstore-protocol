@@ -1,0 +1,74 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/ApplicationVersionSearchResponse.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "applicationVersionInfos": {
+      "$id": "/properties/applicationVersionInfos",
+      "type": "array",
+      "items": {
+        "$id": "/properties/applicationVersionInfos/items",
+        "type": "object",
+        "properties": {
+          "applicationId": {
+            "$id": "/properties/applicationVersionInfos/items/properties/applicationId",
+            "type": "object",
+            "$ref": "Definitions.json#/definitions/applicationId"
+          },
+          "applicationVersion": {
+            "$id": "/properties/applicationVersionInfos/items/properties/applicationVersion",
+            "type": "string",
+            "title": "The Applicationversion Schema ",
+            "default": "",
+            "examples": [
+              "1.0.0"
+            ]
+          },
+          "jreInfo": {
+            "$id": "/properties/applicationVersionInfos/items/properties/jreInfo",
+            "type": "object",
+            "properties": {
+              "jreVendorId": {
+                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/jreVendorId",
+                "type": "string",
+                "title": "The Jrevendorid Schema ",
+                "default": "",
+                "examples": [
+                  "drombler"
+                ]
+              },
+              "javaMajorVersion": {
+                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/javaMajorVersion",
+                "type": "string",
+                "title": "The Javamajorversion Schema ",
+                "default": "",
+                "examples": [
+                  "9"
+                ]
+              },
+              "jreID": {
+                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/jreID",
+                "type": "string",
+                "title": "The Jreid Schema ",
+                "default": "",
+                "examples": [
+                  "drombler-base"
+                ]
+              },
+              "modules": {
+                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/modules",
+                "type": "string",
+                "title": "The Modules Schema ",
+                "default": "",
+                "examples": [
+                  "java.base"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
