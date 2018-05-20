@@ -1,0 +1,35 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/Definitions.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "applicationId": {
+      "$id": "/definitions/applicationId",
+      "type": "object",
+      "title": "The application id",
+      "description": "The application id which uniquely identifies an application.",
+      "properties": {
+        "vendorId": {
+          "$id": "/definitions/applicationId/properties/vendorId",
+          "type": "string",
+          "title": "The vendor id",
+          "description": "The vendor id of the store which uniquely identifies a vendor in the store.",
+          "default": "",
+          "examples": [
+            "drombler"
+          ]
+        },
+        "vendorApplicationId": {
+          "$id": "/definitions/applicationId/properties/vendorApplicationId",
+          "type": "string",
+          "title": "The vendor application id",
+          "description": "The vendor specific application id which uniquely identifies an application of the vendor.",
+          "default": "",
+          "examples": [
+            "drombler-jstore-client"
+          ]
+        }
+      }
+    }
+  }
+}
