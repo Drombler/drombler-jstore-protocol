@@ -1,0 +1,17 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/ApplicationVersionSearchRequest.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "applicationIds": {
+      "$id": "/properties/applicationIds",
+      "type": "array",
+      "items": {
+        "$id": "/properties/applicationIds/items",
+        "type": "object",
+        "$ref": "Definitions.json#/definitions/applicationId"
+      }
+    }
+  }
+}

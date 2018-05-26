@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Notice
+ 
+The contents of this file are subject to the COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)
+Version 1.0 (the "License"); you may not use this file except in
+compliance with the License. A copy of the License is available at
+http://www.opensource.org/licenses/cddl1.txt
+
+The Original Code is Drombler.org. The Initial Developer of the
+Original Code is Florian Brunner (GitHub user: puce77).
+Copyright 2018 Drombler.org. All Rights Reserved.
+
+Contributor(s): .
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.drombler</groupId>
+        <artifactId>drombler-oss-parent</artifactId>
+        <version>2.8</version>
+        <relativePath />
+    </parent>
+
+    <groupId>org.drombler.jstore.protocol</groupId>
+    <artifactId>drombler-jstore-protocol</artifactId>
+    <version>0.1</version>
+    <packaging>bundle</packaging>
+
+    <name>Drombler JStore Protocol</name>
+    <url>http://www.drombler.org/drombler-jstore-protocol/${project.version}/docs/site</url>
+    <description>The protocol of the Drombler JStore.</description>
+    <inceptionYear>2018</inceptionYear>
+
+    <scm>
+        <connection>${scm.parent.connection}</connection>
+        <developerConnection>${scm.parent.developerConnection}</developerConnection>
+        <url>${scm.parent.url}</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</name>
+            <distribution>repo</distribution>
+            <!--<url>http://java.sun.com/spl.html</url>-->
+            <url>../LICENSE.txt</url>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <site>
+            <id>github</id>
+            <name>Drombler JStore Client Service</name>
+            <url>${distributionManagement.parent.url}/${project.artifactId}/</url>
+        </site>
+    </distributionManagement>
+
+    <properties>
+        <!--<java.min.version>10</java.min.version>--> <!-- supported by AWS Elastic Bean / create customer Docker image ? -->
+        <plugin.compiler.version>3.7.0</plugin.compiler.version>
+        <plugin.jar.version>3.1.0</plugin.jar.version>
+
+
+        <!-- Dev Environment Defaults -->
+        <scm.parent.connection>scm:git:https://github.com/Drombler/drombler-jstore-protocol.git</scm.parent.connection>
+        <scm.parent.developerConnection>scm:git:git@github.com:Drombler/drombler-jstore-protocol.git
+        </scm.parent.developerConnection>
+        <scm.parent.url>https://github.com/Drombler/drombler-jstore-protocol</scm.parent.url>
+        <!-- URLs to use with the standard site plugin with the git wagon -->
+        <distributionManagement.base.url>github:http://drombler.github.io/drombler-jstore-protocol/${project.version}
+        </distributionManagement.base.url>
+        <distributionManagement.parent.url>${distributionManagement.base.url}/docs/site
+        </distributionManagement.parent.url>
+        <!-- URL to use with the GitHub site plugin -->
+        <!--<distributionManagement.parent.url>${project.version}/docs/site</distributionManagement.parent.url>-->
+        <!--<url.parent>http://www.drombler.org/drombler-fx/${project.version}/docs/site</url.parent>-->
+
+    </properties>
+
+    <!-- Not inherited!?? -->
+    <prerequisites>
+        <maven>${maven.version}</maven>
+    </prerequisites>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.5.0</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                <configuration>
+                    <sourceDirectory>${basedir}/src/main/resources/org/drombler/jstore/protocol/json</sourceDirectory>
+                    <targetPackage>org.drombler.jstore.protocol.json</targetPackage>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-json-pojos</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>2.9.5</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+    </dependencies>
+</project>
