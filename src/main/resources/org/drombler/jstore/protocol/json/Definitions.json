@@ -9,27 +9,41 @@
       "title": "The application id",
       "description": "The application id which uniquely identifies an application.",
       "properties": {
-        "vendorId": {
-          "$id": "/definitions/applicationId/properties/vendorId",
+        "groupId": {
+          "$id": "/definitions/applicationId/properties/groupId",
           "type": "string",
-          "title": "The vendor id",
-          "description": "The vendor id of the store which uniquely identifies a vendor in the store.",
+          "title": "The Maven groupId",
+          "description": "The Maven groupId of the application artifact.",
           "default": "",
           "examples": [
-            "drombler"
+            "org.drombler.jstore.client"
           ]
         },
-        "vendorApplicationId": {
-          "$id": "/definitions/applicationId/properties/vendorApplicationId",
+        "artifactId": {
+          "$id": "/definitions/applicationId/properties/artifactId",
           "type": "string",
-          "title": "The vendor application id",
-          "description": "The vendor specific application id which uniquely identifies an application of the vendor.",
+          "title": "The Maven artifactId",
+          "description": "The Maven artifactId of the application artifact.",
           "default": "",
           "examples": [
-            "drombler-jstore-client"
+            "drombler-jstore-client-application"
+          ]
+        },
+        "version": {
+          "$id": "/definitions/applicationId/properties/version",
+          "type": "string",
+          "title": "The version",
+          "description": "The version of the application artifact. Can be left out when unknown.",
+          "default": "",
+          "examples": [
+            "1.0.0"
           ]
         }
-      }
+      },
+      "required": [
+        "groupId",
+        "artifactId"
+      ]
     }
   }
 }
