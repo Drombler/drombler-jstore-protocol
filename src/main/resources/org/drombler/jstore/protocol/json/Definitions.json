@@ -28,21 +28,66 @@
           "examples": [
             "drombler-jstore-client-application"
           ]
-        },
-        "version": {
-          "$id": "/definitions/applicationId/properties/version",
-          "type": "string",
-          "title": "The version",
-          "description": "The version of the application artifact. Can be left out when unknown.",
-          "default": "",
-          "examples": [
-            "1.0.0"
-          ]
         }
       },
       "required": [
         "groupId",
         "artifactId"
+      ]
+    },
+    "systemInfo": {
+      "$id": "/definitions/systemInfo",
+      "type": "object",
+      "title": "The system info",
+      "description": "The info about the target system relevant to select the managed native components.",
+      "properties": {
+        "osName": {
+          "$id": "/definitions/systemInfo/properties/osName",
+          "type": "string",
+          "title": "The operating system name",
+          "description": "The operating system name",
+          "default": "",
+          "examples": [
+            "Linux"
+          ]
+        },
+        "osVersion": {
+          "$id": "/definitions/systemInfo/properties/osVersion",
+          "type": "string",
+          "title": "The operating system version",
+          "description": "The operating system version",
+          "default": "",
+          "examples": [
+            "4.4.0-128-generic"
+          ]
+        },
+        "osArch": {
+          "$id": "/definitions/systemInfo/properties/osArch",
+          "type": "string",
+          "title": "The operating system architecture",
+          "description": "The operating system architecture",
+          "default": "",
+          "examples": [
+            "amd64"
+          ]
+        },
+        "headless": {
+          "$id": "/definitions/systemInfo/properties/headless",
+          "type": "boolean",
+          "title": "The headless flag",
+          "description": "true, if the system is a headless device, else false",
+          "default": "",
+          "examples": [
+            "true",
+            "false"
+          ]
+        }
+      },
+      "required": [
+        "osName",
+        "osVersion",
+        "osArch",
+        "headless"
       ]
     }
   }

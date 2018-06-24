@@ -18,6 +18,17 @@
         "1.0.0"
       ]
     },
+    "headlessSupported": {
+      "$id": "/properties/headlessSupported",
+      "type": "boolean",
+      "title": "The headless supported flag",
+      "description": "True, if the application also runs on headless devices, else false",
+      "default": "",
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
     "managedNativeComponents": {
       "$id": "/properties/managedComponents",
       "type": "object",

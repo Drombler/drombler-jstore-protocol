@@ -4,79 +4,37 @@
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
-    "applicationVersionInfos": {
-      "$id": "/properties/applicationVersionInfos",
+    "upgradableApplications": {
+      "$id": "/properties/upgradableApplications",
       "type": "array",
       "items": {
-        "$id": "/properties/applicationVersionInfos/items",
+        "$id": "/properties/upgradableApplications/items",
         "type": "object",
         "properties": {
           "applicationId": {
-            "$id": "/properties/applicationVersionInfos/items/properties/applicationId",
+            "$id": "/properties/upgradableApplications/items/properties/applicationId",
             "type": "object",
             "$ref": "Definitions.json#/definitions/applicationId"
           },
-          "applicationVersion": {
-            "$id": "/properties/applicationVersionInfos/items/properties/applicationVersion",
+          "latestUpgradableApplicationVersion": {
+            "$id": "/properties/upgradableApplications/items/properties/latestUpgradableApplicationVersion",
             "type": "string",
-            "title": "The newest application version",
+            "title": "The latest upgradable application version",
+            "description": "The latest upgradable application version, depending on the currently installed version and supported managed native components for the target system",
             "default": "",
             "examples": [
               "1.0.0"
             ]
-          },
-          "jreInfo": {
-            "$id": "/properties/applicationVersionInfos/items/properties/jreInfo",
-            "type": "object",
-            "properties": {
-              "jreVendorId": {
-                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/jreVendorId",
-                "type": "string",
-                "title": "The JRE vendor id",
-                "default": "",
-                "examples": [
-                  "drombler"
-                ]
-              },
-              "javaMajorVersion": {
-                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/javaMajorVersion",
-                "type": "string",
-                "title": "The Java major version",
-                "default": "",
-                "examples": [
-                  "8",
-                  "9",
-                  "10"
-                ]
-              },
-              "customJREId": {
-                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/customJREId",
-                "type": "string",
-                "title": "The custom JRE id",
-                "description": "The vendor specific JRE id for custom JREs.",
-                "default": "",
-                "examples": [
-                  "drombler-base"
-                ]
-              },
-              "modules": {
-                "$id": "/properties/applicationVersionInfos/items/properties/jreInfo/properties/modules",
-                "type": "array",
-                "title": "The Java modules",
-                "description": "The required Java modules, which should be respected by alternate JREs.",
-                "default": "",
-                "examples": [
-                  "java.base"
-                ],
-                "items": {
-                  "$id": "/properties/applicationVersionInfos/items",
-                  "type": "string"
-                }
-              }
-            }
           }
-        }
+        },
+        "required": [
+          "applicationId",
+          "latestUpgradableApplicationVersion"
+        ]
       }
     }
-  }
+  },
+  "required": [
+    "upgradableApplications"
+  ]
 }
