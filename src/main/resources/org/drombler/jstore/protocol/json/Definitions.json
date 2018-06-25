@@ -9,27 +9,86 @@
       "title": "The application id",
       "description": "The application id which uniquely identifies an application.",
       "properties": {
-        "vendorId": {
-          "$id": "/definitions/applicationId/properties/vendorId",
+        "groupId": {
+          "$id": "/definitions/applicationId/properties/groupId",
           "type": "string",
-          "title": "The vendor id",
-          "description": "The vendor id of the store which uniquely identifies a vendor in the store.",
+          "title": "The Maven groupId",
+          "description": "The Maven groupId of the application artifact.",
           "default": "",
           "examples": [
-            "drombler"
+            "org.drombler.jstore.client"
           ]
         },
-        "vendorApplicationId": {
-          "$id": "/definitions/applicationId/properties/vendorApplicationId",
+        "artifactId": {
+          "$id": "/definitions/applicationId/properties/artifactId",
           "type": "string",
-          "title": "The vendor application id",
-          "description": "The vendor specific application id which uniquely identifies an application of the vendor.",
+          "title": "The Maven artifactId",
+          "description": "The Maven artifactId of the application artifact.",
           "default": "",
           "examples": [
-            "drombler-jstore-client"
+            "drombler-jstore-client-application"
           ]
         }
-      }
+      },
+      "required": [
+        "groupId",
+        "artifactId"
+      ]
+    },
+    "systemInfo": {
+      "$id": "/definitions/systemInfo",
+      "type": "object",
+      "title": "The system info",
+      "description": "The info about the target system relevant to select the managed native components.",
+      "properties": {
+        "osName": {
+          "$id": "/definitions/systemInfo/properties/osName",
+          "type": "string",
+          "title": "The operating system name",
+          "description": "The operating system name",
+          "default": "",
+          "examples": [
+            "Linux"
+          ]
+        },
+        "osVersion": {
+          "$id": "/definitions/systemInfo/properties/osVersion",
+          "type": "string",
+          "title": "The operating system version",
+          "description": "The operating system version",
+          "default": "",
+          "examples": [
+            "4.4.0-128-generic"
+          ]
+        },
+        "osArch": {
+          "$id": "/definitions/systemInfo/properties/osArch",
+          "type": "string",
+          "title": "The operating system architecture",
+          "description": "The operating system architecture",
+          "default": "",
+          "examples": [
+            "amd64"
+          ]
+        },
+        "headless": {
+          "$id": "/definitions/systemInfo/properties/headless",
+          "type": "boolean",
+          "title": "The headless flag",
+          "description": "true, if the system is a headless device, else false",
+          "default": "",
+          "examples": [
+            "true",
+            "false"
+          ]
+        }
+      },
+      "required": [
+        "osName",
+        "osVersion",
+        "osArch",
+        "headless"
+      ]
     }
   }
 }
