@@ -1,0 +1,45 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/JreVersionSearchRequest.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "selectedJREs": {
+      "$id": "/properties/selectedJREs",
+      "type": "array",
+      "items": {
+        "$id": "/properties/selectedJREs/items",
+        "type": "object",
+        "properties": {
+          "jreInfo": {
+            "$id": "/properties/selectedJREs/items/properties/jreInfo",
+            "type": "object",
+            "$ref": "Definitions.json#/definitions/jreInfo"
+          },
+          "installedImplementationVersion": {
+            "$id": "/properties/selectedJREs/items/properties/installedImplementationVersion",
+            "type": "string",
+            "title": "The currently installed JRE implementation version, if the JRE is already installed (optional)",
+            "default": "",
+            "examples": [
+              "8u172",
+              "10.0.1"
+            ]
+          }
+        },
+        "required": [
+          "jreInfo"
+        ]
+      }
+    },
+    "systemInfo": {
+      "$id": "/properties/systemInfo",
+      "type": "object",
+      "$ref": "Definitions.json#/definitions/systemInfo"
+    }
+  },
+  "required": [
+    "selectedJREs",
+    "systemInfo"
+  ]
+}

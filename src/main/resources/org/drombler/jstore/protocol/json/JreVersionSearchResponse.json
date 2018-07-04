@@ -1,0 +1,41 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/JreVersionSearchResponse.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "upgradableJREs": {
+      "$id": "/properties/upgradableJREs",
+      "type": "array",
+      "items": {
+        "$id": "/properties/upgradableJREs/items",
+        "type": "object",
+        "properties": {
+          "jreInfo": {
+            "$id": "/properties/upgradableJREs/items/properties/jreInfo",
+            "type": "object",
+            "$ref": "Definitions.json#/definitions/jreInfo"
+          },
+          "latestUpgradableJREImplementationVersion": {
+            "$id": "/properties/upgradableJREs/items/properties/latestUpgradableJREImplementationVersion",
+            "type": "string",
+            "title": "The latest upgradable JRE implementation version",
+            "description": "The latest upgradable JRE implementation version, depending on the vendor and specification version for the target system",
+            "default": "",
+            "examples": [
+              "8u172",
+              "10.0.1"
+            ]
+          }
+        },
+        "required": [
+          "jreInfo",
+          "latestUpgradableJREImplementationVersion"
+        ]
+      }
+    }
+  },
+  "required": [
+    "upgradableApplications"
+  ]
+}
