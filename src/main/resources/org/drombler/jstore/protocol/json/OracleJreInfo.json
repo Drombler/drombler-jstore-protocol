@@ -1,0 +1,112 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/OracleJreInfo.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "jreImplementationInfos": {
+      "$id": "/properties/jreImplementationInfos",
+      "type": "array",
+      "items": {
+        "$id": "/properties/jreImplementationInfos/items",
+        "type": "object",
+        "properties": {
+          "javaSpecificationVersion": {
+            "$id": "/properties/jreImplementationInfos/items/properties/javaSpecificationVersion",
+            "type": "string",
+            "title": "The Javaspecificationversion Schema ",
+            "default": "",
+            "examples": [
+              "10"
+            ]
+          },
+          "operatingSystems": {
+            "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems",
+            "type": "array",
+            "items": {
+              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items",
+              "type": "object",
+              "properties": {
+                "osName": {
+                  "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/osName",
+                  "type": "string",
+                  "title": "The Osname Schema ",
+                  "default": "",
+                  "examples": [
+                    "linux"
+                  ]
+                },
+                "architectures": {
+                  "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures",
+                  "type": "array",
+                  "items": {
+                    "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items",
+                    "type": "object",
+                    "properties": {
+                      "osArch": {
+                        "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/osArch",
+                        "type": "string",
+                        "title": "The Osarch Schema ",
+                        "default": "",
+                        "examples": [
+                          "x64"
+                        ]
+                      },
+                      "versions": {
+                        "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions",
+                        "type": "array",
+                        "items": {
+                          "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items",
+                          "type": "object",
+                          "properties": {
+                            "jreVersion": {
+                              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items/properties/jreVersion",
+                              "type": "string",
+                              "title": "The Jreversion Schema ",
+                              "default": "",
+                              "examples": [
+                                "10.0.1"
+                              ]
+                            },
+                            "url": {
+                              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items/properties/url",
+                              "type": "string",
+                              "title": "The Url Schema ",
+                              "default": "",
+                              "examples": [
+                                "http://download.oracle.com/otn-pub/java/jdk/10.0.1+10/fb4372174a714e6b8c52526dc134031e/jre-10.0.1_linux-x64_bin.tar.gz"
+                              ]
+                            },
+                            "releaseDate": {
+                              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items/properties/releaseDate",
+                              "type": "string",
+                              "title": "The Releasedate Schema ",
+                              "default": "",
+                              "examples": [
+                                "2018-04-17"
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "endOfLifeDate": {
+            "$id": "/properties/jreImplementationInfos/items/properties/endOfLifeDate",
+            "type": "string",
+            "title": "The Endoflifedate Schema ",
+            "default": "",
+            "examples": [
+              "2018-09-01"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+
