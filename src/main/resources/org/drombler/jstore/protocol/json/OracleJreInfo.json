@@ -20,31 +20,50 @@
               "10"
             ]
           },
-          "operatingSystems": {
-            "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems",
+          "releases": {
+            "$id": "/properties/jreImplementationInfos/items/properties/releases",
             "type": "array",
             "items": {
-              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items",
+              "$id": "/properties/jreImplementationInfos/items/properties/releases/items",
               "type": "object",
               "properties": {
-                "osName": {
-                  "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/osName",
+                "jreVersion": {
+                  "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/jreVersion",
                   "type": "string",
-                  "title": "The Osname Schema ",
+                  "title": "The Jreversion Schema ",
                   "default": "",
                   "examples": [
-                    "linux"
+                    "10.0.1"
                   ]
                 },
-                "architectures": {
-                  "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures",
+                "releaseDate": {
+                  "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/releaseDate",
+                  "type": "string",
+                  "format": "date",
+                  "title": "The Releasedate Schema ",
+                  "default": "",
+                  "examples": [
+                    "2018-04-17"
+                  ]
+                },
+                "platforms": {
+                  "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms",
                   "type": "array",
                   "items": {
-                    "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items",
+                    "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items",
                     "type": "object",
                     "properties": {
+                      "osName": {
+                        "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/osName",
+                        "type": "string",
+                        "title": "The Osname Schema ",
+                        "default": "",
+                        "examples": [
+                          "linux"
+                        ]
+                      },
                       "osArch": {
-                        "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/osArch",
+                        "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/osArch",
                         "type": "string",
                         "title": "The Osarch Schema ",
                         "default": "",
@@ -52,42 +71,29 @@
                           "x64"
                         ]
                       },
-                      "versions": {
-                        "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions",
+                      "headless": {
+                        "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/headless",
+                        "type": "boolean",
+                        "title": "The headless flag",
+                        "default": "false"
+                      },
+                      "labels": {
+                        "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/labels",
+                        "title": "Additional labels",
                         "type": "array",
                         "items": {
-                          "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items",
-                          "type": "object",
-                          "properties": {
-                            "jreVersion": {
-                              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items/properties/jreVersion",
-                              "type": "string",
-                              "title": "The Jreversion Schema ",
-                              "default": "",
-                              "examples": [
-                                "10.0.1"
-                              ]
-                            },
-                            "url": {
-                              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items/properties/url",
-                              "type": "string",
-                              "title": "The Url Schema ",
-                              "default": "",
-                              "examples": [
-                                "http://download.oracle.com/otn-pub/java/jdk/10.0.1+10/fb4372174a714e6b8c52526dc134031e/jre-10.0.1_linux-x64_bin.tar.gz"
-                              ]
-                            },
-                            "releaseDate": {
-                              "$id": "/properties/jreImplementationInfos/items/properties/operatingSystems/items/properties/architectures/items/properties/versions/items/properties/releaseDate",
-                              "type": "string",
-                              "title": "The Releasedate Schema ",
-                              "default": "",
-                              "examples": [
-                                "2018-04-17"
-                              ]
-                            }
-                          }
+                          "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/labels/items",
+                          "type": "string"
                         }
+                      },
+                      "url": {
+                        "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/url",
+                        "type": "string",
+                        "title": "The Url Schema ",
+                        "default": "",
+                        "examples": [
+                          "http://download.oracle.com/otn-pub/java/jdk/10.0.1+10/fb4372174a714e6b8c52526dc134031e/jre-10.0.1_linux-x64_bin.tar.gz"
+                        ]
                       }
                     }
                   }
@@ -98,6 +104,7 @@
           "endOfLifeDate": {
             "$id": "/properties/jreImplementationInfos/items/properties/endOfLifeDate",
             "type": "string",
+            "format": "date",
             "title": "The Endoflifedate Schema ",
             "default": "",
             "examples": [
@@ -109,4 +116,3 @@
     }
   }
 }
-

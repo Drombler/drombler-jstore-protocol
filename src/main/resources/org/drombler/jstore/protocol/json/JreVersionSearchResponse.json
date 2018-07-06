@@ -36,6 +36,6 @@
     }
   },
   "required": [
-    "upgradableApplications"
+    "upgradableJREs"
   ]
 }
