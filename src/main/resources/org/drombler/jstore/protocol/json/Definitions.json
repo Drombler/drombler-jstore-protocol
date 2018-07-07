@@ -81,6 +81,15 @@
             "true",
             "false"
           ]
+        },
+        "labels": {
+          "$id": "/definitions/systemInfo/properties/labels",
+          "title": "Additional labels",
+          "type": "array",
+          "items": {
+            "$id": "/definitions/systemInfo/properties/labels/items",
+            "type": "string"
+          }
         }
       },
       "required": [
