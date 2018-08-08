@@ -14,7 +14,7 @@
           "javaSpecificationVersion": {
             "$id": "/properties/jreImplementationInfos/items/properties/javaSpecificationVersion",
             "type": "string",
-            "title": "The Javaspecificationversion Schema ",
+            "title": "The java specification version",
             "default": "",
             "examples": [
               "10"
@@ -30,7 +30,7 @@
                 "jreVersion": {
                   "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/jreVersion",
                   "type": "string",
-                  "title": "The Jreversion Schema ",
+                  "title": "The JRE version",
                   "default": "",
                   "examples": [
                     "10.0.1"
@@ -40,7 +40,7 @@
                   "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/releaseDate",
                   "type": "string",
                   "format": "date",
-                  "title": "The Releasedate Schema ",
+                  "title": "The release date",
                   "default": "",
                   "examples": [
                     "2018-04-17"
@@ -56,7 +56,7 @@
                       "osName": {
                         "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/osName",
                         "type": "string",
-                        "title": "The Osname Schema ",
+                        "title": "The os name",
                         "default": "",
                         "examples": [
                           "linux"
@@ -65,7 +65,7 @@
                       "osArch": {
                         "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/osArch",
                         "type": "string",
-                        "title": "The Osarch Schema ",
+                        "title": "The os arch",
                         "default": "",
                         "examples": [
                           "x64"
@@ -89,11 +89,39 @@
                       "url": {
                         "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/url",
                         "type": "string",
-                        "title": "The Url Schema ",
+                        "title": "The URL",
                         "default": "",
                         "examples": [
                           "http://download.oracle.com/otn-pub/java/jdk/10.0.1+10/fb4372174a714e6b8c52526dc134031e/jre-10.0.1_linux-x64_bin.tar.gz"
                         ]
+                      },
+                      "checksums": {
+                        "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums",
+                        "type": "array",
+                        "items": {
+                          "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items",
+                          "type": "object",
+                          "properties": {
+                            "algorithm": {
+                              "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items/properties/algorithm",
+                              "type": "string",
+                              "title": "The checksum algorithm",
+                              "default": "",
+                              "examples": [
+                                "sha256"
+                              ]
+                            },
+                            "hashValue": {
+                              "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items/properties/hashValue",
+                              "type": "string",
+                              "title": "The checksum hash value",
+                              "default": "",
+                              "examples": [
+                                "4ca492e0dd46c51bb3263d7347f6ede04fceb07fde3f01fed2c0336b18596c41"
+                              ]
+                            }
+                          }
+                        }
                       }
                     }
                   }
