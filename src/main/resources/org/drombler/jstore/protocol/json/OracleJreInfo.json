@@ -101,26 +101,7 @@
                         "items": {
                           "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items",
                           "type": "object",
-                          "properties": {
-                            "algorithm": {
-                              "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items/properties/algorithm",
-                              "type": "string",
-                              "title": "The checksum algorithm",
-                              "default": "",
-                              "examples": [
-                                "sha256"
-                              ]
-                            },
-                            "hashValue": {
-                              "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items/properties/hashValue",
-                              "type": "string",
-                              "title": "The checksum hash value",
-                              "default": "",
-                              "examples": [
-                                "4ca492e0dd46c51bb3263d7347f6ede04fceb07fde3f01fed2c0336b18596c41"
-                              ]
-                            }
-                          }
+                          "$ref": "Definitions.json#/definitions/checksum"
                         }
                       }
                     }
