@@ -138,11 +138,11 @@
       }
     },
     "jreInfo": {
-      "$id": "/properties/jreInfo",
+      "$id": "/definitions/jreInfo",
       "type": "object",
       "properties": {
         "jreVendorId": {
-          "$id": "/properties/jreInfo/properties/jreVendorId",
+          "$id": "/definitions/jreInfo/properties/jreVendorId",
           "type": "string",
           "title": "The JRE vendor id",
           "default": "",
@@ -151,7 +151,7 @@
           ]
         },
         "javaSpecificationVersion": {
-          "$id": "/properties/jreInfo/properties/javaSpecificationVersion",
+          "$id": "/definitions/jreInfo/properties/javaSpecificationVersion",
           "type": "string",
           "title": "The Java major version",
           "default": "",
@@ -190,6 +190,30 @@
         "jreVendorId",
         "javaSpecificationVersion"
       ]
+    },
+    "checksum": {
+      "$id": "/definitions/checksum",
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "$id": "/definitions/checksum/properties/algorithm",
+          "type": "string",
+          "title": "The checksum algorithm",
+          "default": "",
+          "examples": [
+            "sha256"
+          ]
+        },
+        "hashValue": {
+          "$id": "/definitions/checksum/properties/hashValue",
+          "type": "string",
+          "title": "The checksum hash value",
+          "default": "",
+          "examples": [
+            "4ca492e0dd46c51bb3263d7347f6ede04fceb07fde3f01fed2c0336b18596c41"
+          ]
+        }
+      }
     }
   }
 }

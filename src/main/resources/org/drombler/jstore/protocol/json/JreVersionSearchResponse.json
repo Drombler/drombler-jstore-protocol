@@ -26,6 +26,15 @@
               "8u172",
               "10.0.1"
             ]
+          },
+          "checksums": {
+            "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums",
+            "type": "array",
+            "items": {
+              "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items",
+              "type": "object",
+              "$ref": "Definitions.json#/definitions/checksum"
+            }
           }
         },
         "required": [
