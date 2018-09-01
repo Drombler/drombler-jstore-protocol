@@ -1,0 +1,56 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/Agent.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "storeConfigurations": {
+      "$id": "/properties/storeConfigurations",
+      "type": "array",
+      "items": {
+        "$id": "/properties/storeConfigurations/items",
+        "type": "object",
+        "properties": {
+          "store": {
+            "$id": "/properties/storeConfigurations/items/properties/store",
+            "type": "object",
+            "$ref": "Definitions.json#/definitions/store"
+          },
+          "preSelectedApplications": {
+            "$id": "/properties/stores/items/properties/preSelectedApplications",
+            "type": "array",
+            "items": {
+              "$id": "/properties/stores/items/properties/preSelectedApplications/items",
+              "type": "object",
+              "properties": {
+                "applicationId": {
+                  "$id": "/properties/stores/items/properties/selectedApplications/items/properties/applicationId",
+                  "type": "object",
+                  "$ref": "Definitions.json#/definitions/applicationId"
+                },
+                "autodownload": {
+                  "$id": "/properties/stores/items/properties/selectedApplications/items/properties/autodownload",
+                  "type": "boolean",
+                  "title": "The autodownload flag",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "autoinstall": {
+                  "$id": "/properties/stores/items/properties/selectedApplications/items/properties/autoinstall",
+                  "type": "boolean",
+                  "title": "The autoinstall flag ",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
