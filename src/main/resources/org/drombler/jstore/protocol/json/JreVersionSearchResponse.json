@@ -27,6 +27,28 @@
               "10.0.1"
             ]
           },
+          "jreImplementationId": {
+            "$id": "/properties/jreInfo/properties/jreImplementationId",
+            "type": "string",
+            "title": "The JRE implementation id",
+            "description": "The vendor specific JRE implementation id. It must be unique per vendor. It can match the file name, if the file name is unique, but clients should not expect it to be a file name.",
+            "default": "",
+            "examples": [
+              "jre-10.0.2_linux-x64_bin.tar.gz",
+              "drombler-base-10.0.2_linux-x64"
+            ]
+          },
+          "jreImplementationFileName": {
+            "$id": "/properties/upgradableJREs/items/properties/jreImplementationFileName",
+            "type": "string",
+            "title": "The JRE implementation file name",
+            "description": "The JRE package file name",
+            "default": "",
+            "examples": [
+              "jre-10.0.2_linux-x64_bin.tar.gz",
+              "serverjre-10.0.2_windows-x64_bin.tar.gz"
+            ]
+          },
           "checksums": {
             "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums",
             "type": "array",
@@ -39,7 +61,9 @@
         },
         "required": [
           "jreInfo",
-          "latestUpgradableJREImplementationVersion"
+          "latestUpgradableJREImplementationVersion",
+          "jreImplementationId",
+          "jreImplementationFileName"
         ]
       }
     }
