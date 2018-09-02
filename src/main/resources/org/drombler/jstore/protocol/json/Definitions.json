@@ -81,6 +81,15 @@
             "true",
             "false"
           ]
+        },
+        "labels": {
+          "$id": "/definitions/systemInfo/properties/labels",
+          "title": "Additional labels",
+          "type": "array",
+          "items": {
+            "$id": "/definitions/systemInfo/properties/labels/items",
+            "type": "string"
+          }
         }
       },
       "required": [
@@ -89,6 +98,122 @@
         "osArch",
         "headless"
       ]
+    },
+    "store": {
+      "$id": "/definitions/store",
+      "type": "object",
+      "title": "The application store",
+      "description": "The application store which manages the applications.",
+      "properties": {
+        "id": {
+          "$id": "/definitions/store/properties/id",
+          "type": "string",
+          "title": "The store id",
+          "description": "The id of the store which uniquely identifies an application store.",
+          "default": "",
+          "examples": [
+            "jstore"
+          ]
+        },
+        "displayName": {
+          "$id": "/definitions/store/properties/displayName",
+          "type": "string",
+          "title": "The display name",
+          "description": "The name suitable to display to the user.",
+          "default": "",
+          "examples": [
+            "Drombler JStore"
+          ]
+        },
+        "endpoint": {
+          "$id": "/definitions/store/properties/endpoint",
+          "type": "string",
+          "title": "The endpoint of the application store",
+          "description": "The endpoint of the REST resources of the application store.",
+          "default": "",
+          "examples": [
+            "http://jstore.drombler.com/webresources"
+          ]
+        }
+      }
+    },
+    "jreInfo": {
+      "$id": "/definitions/jreInfo",
+      "type": "object",
+      "properties": {
+        "jreVendorId": {
+          "$id": "/definitions/jreInfo/properties/jreVendorId",
+          "type": "string",
+          "title": "The JRE vendor id",
+          "default": "",
+          "examples": [
+            "oracle"
+          ]
+        },
+        "javaSpecificationVersion": {
+          "$id": "/definitions/jreInfo/properties/javaSpecificationVersion",
+          "type": "string",
+          "title": "The Java major version",
+          "default": "",
+          "examples": [
+            "8",
+            "9",
+            "10"
+          ]
+        },
+        "customJREId": {
+          "$id": "/properties/jreInfo/properties/customJREId",
+          "type": "string",
+          "title": "The custom JRE id",
+          "description": "The vendor specific JRE id for custom JREs.",
+          "default": "",
+          "examples": [
+            "drombler-base"
+          ]
+        },
+        "modules": {
+          "$id": "/properties/jreInfo/properties/modules",
+          "type": "array",
+          "title": "The Java modules",
+          "description": "The required Java modules, which should be respected by alternate JREs.",
+          "default": "",
+          "examples": [
+            "java.base"
+          ],
+          "items": {
+            "$id": "/properties/jreInfo/properties/modules/items",
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "jreVendorId",
+        "javaSpecificationVersion"
+      ]
+    },
+    "checksum": {
+      "$id": "/definitions/checksum",
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "$id": "/definitions/checksum/properties/algorithm",
+          "type": "string",
+          "title": "The checksum algorithm",
+          "default": "",
+          "examples": [
+            "sha256"
+          ]
+        },
+        "hashValue": {
+          "$id": "/definitions/checksum/properties/hashValue",
+          "type": "string",
+          "title": "The checksum hash value",
+          "default": "",
+          "examples": [
+            "4ca492e0dd46c51bb3263d7347f6ede04fceb07fde3f01fed2c0336b18596c41"
+          ]
+        }
+      }
     }
   }
 }

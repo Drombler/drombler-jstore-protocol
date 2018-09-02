@@ -1,0 +1,74 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/JreVersionSearchResponse.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "upgradableJREs": {
+      "$id": "/properties/upgradableJREs",
+      "type": "array",
+      "items": {
+        "$id": "/properties/upgradableJREs/items",
+        "type": "object",
+        "properties": {
+          "jreInfo": {
+            "$id": "/properties/upgradableJREs/items/properties/jreInfo",
+            "type": "object",
+            "$ref": "Definitions.json#/definitions/jreInfo"
+          },
+          "latestUpgradableJREImplementationVersion": {
+            "$id": "/properties/upgradableJREs/items/properties/latestUpgradableJREImplementationVersion",
+            "type": "string",
+            "title": "The latest upgradable JRE implementation version",
+            "description": "The latest upgradable JRE implementation version, depending on the vendor and specification version for the target system",
+            "default": "",
+            "examples": [
+              "8u172",
+              "10.0.1"
+            ]
+          },
+          "jreImplementationId": {
+            "$id": "/properties/jreInfo/properties/jreImplementationId",
+            "type": "string",
+            "title": "The JRE implementation id",
+            "description": "The vendor specific JRE implementation id. It must be unique per vendor. It can match the file name, if the file name is unique, but clients should not expect it to be a file name.",
+            "default": "",
+            "examples": [
+              "jre-10.0.2_linux-x64_bin.tar.gz",
+              "drombler-base-10.0.2_linux-x64"
+            ]
+          },
+          "jreImplementationFileName": {
+            "$id": "/properties/upgradableJREs/items/properties/jreImplementationFileName",
+            "type": "string",
+            "title": "The JRE implementation file name",
+            "description": "The JRE package file name",
+            "default": "",
+            "examples": [
+              "jre-10.0.2_linux-x64_bin.tar.gz",
+              "serverjre-10.0.2_windows-x64_bin.tar.gz"
+            ]
+          },
+          "checksums": {
+            "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums",
+            "type": "array",
+            "items": {
+              "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms/items/properties/checksums/items",
+              "type": "object",
+              "$ref": "Definitions.json#/definitions/checksum"
+            }
+          }
+        },
+        "required": [
+          "jreInfo",
+          "latestUpgradableJREImplementationVersion",
+          "jreImplementationId",
+          "jreImplementationFileName"
+        ]
+      }
+    }
+  },
+  "required": [
+    "upgradableJREs"
+  ]
+}

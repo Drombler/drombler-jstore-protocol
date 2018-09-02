@@ -19,13 +19,13 @@ Contributor(s): .
     <parent>
         <groupId>org.drombler</groupId>
         <artifactId>drombler-oss-parent</artifactId>
-        <version>3.0</version>
+        <version>3.1</version>
         <relativePath />
     </parent>
 
     <groupId>org.drombler.jstore.protocol</groupId>
     <artifactId>drombler-jstore-protocol</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
     <packaging>bundle</packaging>
 
     <name>Drombler JStore Protocol</name>
@@ -110,6 +110,7 @@ Contributor(s): .
                 <configuration>
                     <sourceDirectory>${basedir}/src/main/resources/org/drombler/jstore/protocol/json</sourceDirectory>
                     <targetPackage>org.drombler.jstore.protocol.json</targetPackage>
+                    <dateType>java.time.LocalDate</dateType>
                 </configuration>
                 <executions>
                     <execution>
@@ -123,20 +124,16 @@ Contributor(s): .
         </plugins>
     </build>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>2.9.5</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 </project>
