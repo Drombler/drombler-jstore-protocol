@@ -20,12 +20,12 @@ Contributor(s): .
         <groupId>org.drombler</groupId>
         <artifactId>drombler-oss-parent</artifactId>
         <version>3.1</version>
-        <relativePath/>
+        <relativePath />
     </parent>
 
     <groupId>org.drombler.jstore.protocol</groupId>
     <artifactId>drombler-jstore-protocol</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <name>Drombler JStore Protocol</name>
