@@ -46,6 +46,15 @@
                     "2018-04-17"
                   ]
                 },
+                "sourceCodeTagURL": {
+                  "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/sourceCodeTagURL",
+                  "type": "string",
+                  "title": "The URL to the source code tag",
+                  "default": "",
+                  "examples": [
+                    "https://hg.openjdk.java.net/jdk-updates/jdk11u/file/8513ac27b651"
+                  ]
+                },
                 "platforms": {
                   "$id": "/properties/jreImplementationInfos/items/properties/releases/items/properties/platforms",
                   "type": "array",
