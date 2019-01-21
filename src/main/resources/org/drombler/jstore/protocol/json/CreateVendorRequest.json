@@ -1,0 +1,16 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/CreateVendorRequest.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "vendorInfo": {
+      "$id": "/properties/vendorInfo",
+      "type": "object",
+      "$ref": "Definitions.json#/definitions/vendorInfo"
+    }
+  },
+  "required": [
+    "vendorInfo"
+  ]
+}
