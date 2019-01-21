@@ -19,8 +19,8 @@ Contributor(s): .
     <parent>
         <groupId>org.drombler</groupId>
         <artifactId>drombler-oss-parent</artifactId>
-        <version>3.1</version>
-        <relativePath />
+        <version>3.2-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <groupId>org.drombler.jstore.protocol</groupId>
@@ -59,9 +59,6 @@ Contributor(s): .
 
     <properties>
         <!--<java.min.version>10</java.min.version>--> <!-- supported by AWS Elastic Bean / create customer Docker image ? -->
-        <plugin.compiler.version>3.7.0</plugin.compiler.version>
-        <plugin.jar.version>3.1.0</plugin.jar.version>
-
 
         <!-- Dev Environment Defaults -->
         <scm.parent.connection>scm:git:https://github.com/Drombler/drombler-jstore-protocol.git</scm.parent.connection>
@@ -90,7 +87,6 @@ Contributor(s): .
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.5.0</version>
                 <extensions>true</extensions>
             </plugin>
             <plugin>
