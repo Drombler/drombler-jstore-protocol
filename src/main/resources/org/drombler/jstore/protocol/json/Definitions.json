@@ -215,33 +215,13 @@
         }
       }
     },
-    "vendorInfo": {
-      "$id": "/definitions/vendorInfo",
+    "vendorRegistrationDetails": {
+      "$id": "#/definitions/vendorRegistrationDetails",
       "type": "object",
+      "title": "The vendor registration details",
       "properties": {
-        "vendorId": {
-          "$id": "/definitions/vendorInfo/properties/vendorId",
-          "type": "string",
-          "title": "The vendor id",
-          "description": "A unique id for this vendor.",
-          "default": "",
-          "examples": [
-            "acme",
-            "drombler"
-          ]
-        },
-        "name": {
-          "$id": "/definitions/vendorInfo/properties/name",
-          "type": "string",
-          "title": "The vendor name",
-          "default": "",
-          "examples": [
-            "Acme Corporation",
-            "Drombler GmbH"
-          ]
-        },
         "namespaces": {
-          "$id": "/properties/vendorInfo/properties/namespaces",
+          "$id": "#/definitions/vendorRegistrationDetails/properties/namespaces",
           "title": "The vendor namespaces.",
           "description": "The namespaces owned by the vendor. Make sure you also own all sub-namespaces. Recommendation: use the reverse domain name",
           "type": "array",
@@ -256,32 +236,56 @@
           }
         },
         "registrationEmailAddress": {
-          "$id": "/definitions/vendorInfo/properties/registrationEmailAddress",
+          "$id": "#/definitions/vendorRegistrationDetails/properties/registrationEmailAddress",
           "type": "string",
           "title": "The registration email address.",
-          "description": "The email address used for the registration process.",
+          "description": "The email address used by the platform service provider to contact the vendor.",
           "default": "",
           "examples": [
             "admin@acme.com"
           ]
         },
-        "customerContactEmailAddress": {
-          "$id": "/definitions/vendorInfo/properties/customerContactEmailAddress",
+        "pendingRegistrationEmailAddress": {
+          "$id": "#/definitions/vendorRegistrationDetails/properties/pendingRegistrationEmailAddress",
           "type": "string",
-          "title": "The customer contact email address.",
-          "description": "This email address will be shown to users for customer contact.",
+          "title": "The pending registration email address.",
+          "description": "The email address requested to be used by the platform service provider to contact the vendor, but requires activation.",
           "default": "",
           "examples": [
-            "support@acme.com"
+            "admin@acme.com"
           ]
         }
       },
       "required": [
-        "vendorId",
-        "name",
-        "namespaces",
-        "registrationEmailAddress",
-        "customerContactEmailAddress"
+        "namespaces"
+      ]
+    },
+    "vendorRole":{
+      "$id": "#/definitions/vendorRole",
+      "type": "string",
+      "title": "The vendor role",
+      "enum": [
+        "ADMIN",
+        "PUBLISHER",
+        "TESTER"
+      ]
+    },
+    "errorCode": {
+      "$id": "#/definitions/errorCode",
+      "type": "string",
+      "javaType": "org.drombler.jstore.protocol.v1.json.JStoreErrorCode",
+      "title": "The error code",
+      "enum": [
+        "JSTORE_NEXUS_CLIENT",
+        "JSTORE_ILLEGAL_PROPERTY",
+        "JSTORE_VENDOR_ID_NOT_UNIQUE",
+        "JSTORE_VENDOR_NOT_FOUND",
+        "JSTORE_UNSUPPORTED_JRE_VENDOR",
+        "JSTORE_UNSUPPORTED_JRE_VERSION_FORMAT",
+        "JSTORE_UNSUPPORTED_JAVA_SPECIFICATION_VERSION",
+        "JSTORE_JRE_IMPLEMENTATION_NOT_FOUND",
+        "JSTORE_UNKNOWN",
+        "NEXUS_UNKNOWN"
       ]
     }
   }

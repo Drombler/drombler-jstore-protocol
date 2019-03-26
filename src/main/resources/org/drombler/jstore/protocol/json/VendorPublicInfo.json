@@ -1,0 +1,68 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/VendorPublicInfo.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "The vendor public info",
+  "definitions": {},
+  "properties": {
+    "vendorId": {
+      "$id": "#/properties/vendorId",
+      "type": "string",
+      "title": "The vendor id",
+      "description": "A unique id for this vendor.",
+      "default": "",
+      "examples": [
+        "acme",
+        "drombler"
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The vendor name",
+      "default": "",
+      "examples": [
+        "Acme Corporation",
+        "Drombler GmbH"
+      ]
+    },
+    "verified": {
+      "$id": "#/properties/verified",
+      "type": "boolean",
+      "title": "The verified flag",
+      "description": "flag, if the authenticity of this vendor has been verified by the platform service provider",
+      "examples": [
+        true,
+        false
+      ]
+    },
+    "homepage": {
+      "$id": "#/properties/homepage",
+      "type": "string",
+      "existingJavaType": "java.net.URL",
+      "title": "The vendor homepage",
+      "default": "",
+      "examples": [
+        "https://www.acme.com",
+        "https://www.drombler.com"
+      ]
+    },
+    "customerContactEmailAddress": {
+      "$id": "#/properties/customerContactEmailAddress",
+      "type": "string",
+      "title": "The customer contact email address.",
+      "description": "This email address will be shown to users for customer contact.",
+      "default": "",
+      "examples": [
+        "support@acme.com"
+      ]
+    }
+  },
+  "required": [
+    "vendorId",
+    "name",
+    "verified",
+    "homepage",
+    "customerContactEmailAddress"
+  ]
+}

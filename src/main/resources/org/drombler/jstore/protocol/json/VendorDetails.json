@@ -1,0 +1,70 @@
+{
+  "$id": "http://www.drombler.org/drombler-jstore-protocol/VendorDetails.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "vendorUserMappings": {
+      "$id": "#/definitions/vendorUserMappings",
+      "type": "array",
+      "items": {
+        "$id": "#/definitions/vendorUserMappings/items",
+        "type": "object",
+        "properties": {
+          "username": {
+            "$id": "#/definitions/vendorUserMappings/items/properties/username",
+            "type": "string"
+          },
+          "roles": {
+            "$id": "#/definitions/vendorUserMappings/items/properties/roles",
+            "type": "array",
+            "items": {
+              "$id": "#/definitions/vendorUserMappings/items/properties/roles/items",
+              "type": "string",
+              "$ref": "Definitions.json#/definitions/vendorRole"
+            }
+          }
+        },
+        "required": [
+          "username",
+          "roles"
+        ]
+      }
+    },
+    "vendorUserDetails": {
+      "$id": "#/definitions/vendorUserDetails",
+      "type": "object",
+      "properties": {
+        "userMappings": {
+          "$id": "#/definitions/vendorUserDetails/items",
+          "type": "array",
+          "$ref": "#/definitions/vendorUserMappings"
+        }
+      },
+      "required": [
+        "userMappings"
+      ]
+    }
+  },
+  "properties": {
+    "publicInfo": {
+      "$id": "#/properties/publicInfo",
+      "type": "object",
+      "$ref": "VendorPublicInfo.json"
+    },
+    "registrationDetails": {
+      "$id": "#/properties/registrationDetails",
+      "type": "object",
+      "$ref": "Definitions.json#/definitions/vendorRegistrationDetails"
+    },
+    "userDetails": {
+      "$id": "#/properties/userDetails",
+      "type": "object",
+      "$ref": "#/definitions/vendorUserDetails"
+    }
+  },
+  "required": [
+    "publicInfo",
+    "registrationDetails",
+    "users"
+  ]
+}

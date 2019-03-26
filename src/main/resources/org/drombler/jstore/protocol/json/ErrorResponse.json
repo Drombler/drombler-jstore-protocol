@@ -1,23 +1,18 @@
 {
   "$id": "http://www.drombler.org/drombler-jstore-protocol/ErrorResponse.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "errorCode": {
-      "$id": "/properties/errorCode",
+      "$id": "#/properties/errorCode",
       "type": "string",
-      "title": "The error code",
-      "default": "",
-      "examples": [
-        "JSTORE_UNKNOWN"
-      ]
+      "$ref": "Definitions.json#/definitions/errorCode"
     },
     "errorMessage": {
-      "$id": "/properties/errorMessage",
+      "$id": "#/properties/errorMessage",
       "type": "string",
       "title": "The error message",
-      "default": "",
       "examples": [
         "Some message"
       ]

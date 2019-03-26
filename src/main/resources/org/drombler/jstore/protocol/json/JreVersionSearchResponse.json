@@ -1,8 +1,8 @@
 {
   "$id": "http://www.drombler.org/drombler-jstore-protocol/JreVersionSearchResponse.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "upgradableJREs": {
       "$id": "/properties/upgradableJREs",

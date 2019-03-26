@@ -1,8 +1,8 @@
 {
   "$id": "http://www.drombler.org/drombler-jstore-protocol/Agent.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "storeConfigurations": {
       "$id": "/properties/storeConfigurations",
