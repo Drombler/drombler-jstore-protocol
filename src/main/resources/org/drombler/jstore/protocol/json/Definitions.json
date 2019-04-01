@@ -110,7 +110,6 @@
           "type": "string",
           "title": "The store id",
           "description": "The id of the store which uniquely identifies an application store.",
-          "default": "",
           "examples": [
             "jstore"
           ]
@@ -120,7 +119,6 @@
           "type": "string",
           "title": "The display name",
           "description": "The name suitable to display to the user.",
-          "default": "",
           "examples": [
             "Drombler JStore"
           ]
@@ -130,11 +128,68 @@
           "type": "string",
           "title": "The endpoint of the application store",
           "description": "The endpoint of the REST resources of the application store.",
-          "default": "",
           "examples": [
             "http://jstore.drombler.com/webresources"
           ]
-        }
+        },
+        "keycloak-client-config": {
+          "$id": "#/definitions/store/properties/keycloak-client-config",
+          "type": "object",
+          "title": "The Keycloak client config",
+          "description": "See: https://www.keycloak.org/docs/latest/securing_apps/index.html#java-adapters",
+          "properties": {
+            "auth-server-url": {
+              "$id": "#/definitions/store/properties/keycloak-client-config/properties/auth-server-url",
+              "type": "string",
+              "title": "The base URL of the Keycloak server.",
+              "description": "The base URL of the Keycloak server.",
+              "examples": [
+                "http://localhost:8070/auth"
+              ]
+            },
+            "realm": {
+              "$id": "#/definitions/store/properties/keycloak-client-config/properties/realm",
+              "type": "string",
+              "title": "The realm",
+              "description": "The name of the realm.",
+              "examples": [
+                "drombler",
+                "drombler-staging"
+              ]
+            },
+            "resource": {
+              "$id": "#/definitions/store/properties/keycloak-client-config/properties/resource",
+              "type": "string",
+              "title": "The resource",
+              "description": "The client-id of the application.",
+              "examples": [
+                "jstore-client"
+              ]
+            },
+            "ssl-required": {
+              "$id": "#/definitions/store/properties/keycloak-client-config/properties/ssl-required",
+              "type": "string",
+              "title": "The endpoint of the application store",
+              "description": "Flag if the conmmunication to and from Keycloak server is over HTTPS.",
+              "default": "external",
+              "enum": [
+                "all",
+                "external",
+                "none"
+              ]
+            }
+          },
+          "required": [
+            "auth-server-url",
+            "realm",
+            "resource"
+          ]
+        },
+        "required": [
+          "id",
+          "displayName",
+          "endpoint"
+        ]
       }
     },
     "jreInfo": {
@@ -260,7 +315,7 @@
         "namespaces"
       ]
     },
-    "vendorRole":{
+    "vendorRole": {
       "$id": "#/definitions/vendorRole",
       "type": "string",
       "title": "The vendor role",
